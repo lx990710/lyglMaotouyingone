@@ -10,8 +10,9 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>lyglconsumer</module>
-        <module>util</module>
         <module>lyglLxprovider</module>
+        <module>lyglUtil</module>
+        <module>lyglHktprovider</module>
     </modules>
 
 
@@ -322,6 +323,15 @@
             <artifactId>aliyun-sdk-oss</artifactId>
             <version>2.5.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.13-atlassian-2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-asl</artifactId>
+            <version>1.9.13-atlassian-2</version>
+        </dependency>
     </dependencies>
 </project>

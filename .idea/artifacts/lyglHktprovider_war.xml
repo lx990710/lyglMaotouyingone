@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="lyglHktprovider:war">
+    <output-path>$PROJECT_DIR$/lyglHktprovider/target</output-path>
+    <root id="archive" name="lyglHktprovider.war">
+      <element id="artifact" artifact-name="lyglHktprovider:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -7,11 +7,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="lyglconsumer" />
+        <module name="lyglHktprovider" />
+        <module name="lyglLxprovider" />
+        <module name="lyglUtil" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="lyglconsumer" target="1.7" />
+      <module name="lyglHktprovider" target="1.7" />
+      <module name="lyglLxprovider" target="1.7" />
       <module name="lyglmaotuying" target="1.7" />
+      <module name="lyglUtil" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -28,6 +28,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 </head>
 <body>
+<input type="hidden" value="${sessionScope.user.username } " id="useridweiid">
 <!--header-->
 <div class="navigation">
     <div class="container-fluid">
@@ -212,22 +213,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script>
 
     function shoucheng(scenicid){
-        alert(scenicid)
+
         $.ajax({
             url:"<%=request.getContextPath()%>/DubboController/updataids.do",
             data:{"scenicid":scenicid},
             type:"post",
             dataType:"text",
             success:function (result){
-
                 alert("取消成功")
                 window.location.reload()//刷新当前页面
-
             },
             erro:function(){
-
             }
-
         })
 
     }

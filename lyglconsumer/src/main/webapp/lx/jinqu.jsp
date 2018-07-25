@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,11 +54,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!--//logo-->
         <div class="top-nav">
             <ul class="right-icons">
+                <c:choose>
+                <c:when test="${sessionScope.user==null}">
+                    <li><a href="login.jsp" class="hvr-sweep-to-right more">登录</a></li>
+                    <li><a href="register.jsp" class="hvr-sweep-to-right more">注册</a></li>
+                </c:when>
+                    <c:otherwise>
                 <li><a href="shoucahng.jsp" class="hvr-sweep-to-right more">查看收藏</a></li>
-                <li><a href="login.html" class="hvr-sweep-to-right more">登录</a></li>
-                <li><a href="login.html" class="hvr-sweep-to-right more">注册</a></li>
-
-
+                        <li><a href="" class="hvr-sweep-to-right more">注销登录</a></li>
+                    </c:otherwise>
+                </c:choose>
             </ul>
             <div class="nav-icon">
                 <div class="hero fa-navicon fa-2x nav_slide_button" id="hero">
@@ -216,40 +222,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                              }else{
                     divid+='<a class="hvr-sweep-to-right more" onclick="shoucheng('+datas[i].scenicid+')">已收藏</a>';
                              }
-
-
                     divid+='</div>';//
                     divid+='<div class="clearfix"> </div>';
                     divid+='</div>';
                     divid+='</div>';
                     divid+='</div>';
-
                 }
                 $("[name='aaaaa']").html(divid);
                 //回显
 //
                 $("[name='aaaaa']").selectpicker('refresh');
             }
-
-
         })
-
-
-
-
-
     })
-
-
-
-
-
 </script>
-
 <script>
 
     function shoucheng(scenicid){
-        alert(scenicid)
+        alert(user)
+        var user = $("#useridweiid").val();
+        if(user!=null){
         $.ajax({
             url:"<%=request.getContextPath()%>/DubboController/updataid.do",
             data:{"scenicid":scenicid},
@@ -266,10 +258,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             }
 
         })
-
+        }   else{
+            alert("请登录以后进行收藏");
+        }
     }
 
 </script>
-
 </body>
 </html>
